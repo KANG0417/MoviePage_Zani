@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 // html 태그 가져오기
+=======
+>>>>>>> e3dcc3b822967ec6a44e1f02fa4a9175fd7d86ea
 const card = document.querySelector("#card");
 const searchForm = document.querySelector("#search-box");
 const searchInput = document.querySelector("#search-box .search-txt");
@@ -16,6 +19,7 @@ const topRateUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY
 // 영화 조회 함수 생성
 const getMovie = (url) => {
   fetch(url)
+<<<<<<< HEAD
     .then((response) => {
       return response.json();
     })
@@ -25,6 +29,21 @@ const getMovie = (url) => {
       console.log(movies);
       movies.forEach((item) => {
         const { title, overview, vote_average, backdrop_path, id } = item;
+=======
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      const movies = data.results;
+      movies.forEach(item => {
+        const {
+          title,
+          overview,
+          vote_average,
+          backdrop_path,
+          id,
+        } = item;
+>>>>>>> e3dcc3b822967ec6a44e1f02fa4a9175fd7d86ea
 
         let imgUrl = `https://image.tmdb.org/t/p/w500${backdrop_path}`;
         let noImg =
@@ -38,11 +57,15 @@ const getMovie = (url) => {
             onclick="imgClick('${title}', ${id})" class="movie-img"></img>
           </div>
           <p class="movie-title">${title}</p>
-          <p class="movie-content">${overview}</p>
+          
           <div class="rating">
+<<<<<<< HEAD
             <p class="rating-icon"><span class="movie-rating">${
               Math.ceil(vote_average * 10) / 10
             }</span></p>
+=======
+            <span class="movie-rating">🏆  ${Math.ceil(vote_average * 10) / 10}</p>
+>>>>>>> e3dcc3b822967ec6a44e1f02fa4a9175fd7d86ea
             </div>
         </div>
         `;

@@ -1,144 +1,181 @@
 /* 폰트 */
-@import url('https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@300&display=swap');
-
-*{
-  font-family: 'IBM Plex Sans KR', sans-serif;
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
 }
 
-body{
-  height: auto;
-  margin-bottom: 5rem;
+* {
+  margin: 0px;
+  padding: 0px;
 }
 
-/* 색상 */
-:root{
-  --back-ground: #21555A;
-  --title-right: #FF6060;
-  --title-dark: #3B1111;
-  --search-bar: #008080;
-  --white: #fff;
+ul,
+ol {
+  list-style: none;
 }
+
+a {
+  text-decoration: none;
+}
+
+/* reset css */
+
+
 
 /* 홈 이름 */
-#header{
+#header {
+  /* width: 100vw; */
+  box-shadow: 0px 4px 53px 0px rgba(0, 0, 0, 0.15);
+  padding: 32px 162px;
+  /* min-width: 620px; */
+  /* position: fixed; */
+  top: 0;
+  background-color: #fff;
+  z-index: 99;
+
+}
+
+#header h1 {
+  color: #3A8CF5;
+  font-family: Pretendard;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
   display: flex;
-  flex-direction: column;
+}
+
+.headerContents {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.headerContents div {
+  display: flex;
+}
+
+.headerContents div button {
+  margin-right: 20px;
+  width: 63px;
+  height: 63px;
+  border: none;
+}
+
+.first {
+  display: flex;
   justify-content: center;
   align-items: center;
-  padding: 6rem 0 6rem 0;
-  background-color: var(--search-bar);
-}
-#header h1{
-  font-weight: 800;
-  font-size: 8rem;
-  font-family: 'Tilt Neon', sans-serif;
-  color: var(--title-right);
-  transition: all 0.3s;
-  cursor: pointer;
-}
-#header h2{
-  font-weight: 800;
-  margin-top: 1rem;
-  font-size: 1.5rem;
-  font-family: 'IBM Plex Sans KR', sans-serif;
-  color: var(--title-dark);
-  transition: all 0.3s;
 }
 
-/* 메인 */
-#main{
-  padding-top: 3rem;
-  font-family: 'IBM Plex Sans KR', sans-serif;
-}
-
-/* 검색 부분 */
-#search-box{
-  position: relative;
+.first .bigImageSection {
   display: flex;
-  padding: 1rem;
-  top: 50%;
-  left: 50%;
-  width: 100px;
-  transform: translate(-44%, 30%);
-  border-radius: 20rem;
-  transition: 0.4s;
-  background-color: var(--search-bar);
+  background-image: url('../img/bigImage.jpg');
+  width: 100vw;
+  background-position: center;
+  background-size: cover;
+
 }
-#search-box:hover,
-#search-box:focus-within{
-  width: 400px;
+
+.bigImageTitle {
+  color: #fff;
+  margin: 368px 721px 368px 141px;
 }
-#search-box .search-txt{
-  padding: 0;
-  background-color: transparent;
-  color: var(--white);
-  float: left;
+
+.bigImageTitle .smallIndex {
+  color: #FFF;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.bigImageTitle .bigTitle {
+  color: #FFF;
+  font-family: Pretendard;
+  font-size: 128px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+}
+
+
+#search-input {
+  width: 403px;
+  height: 63px;
+  flex-shrink: 0;
+  border-radius: 65px;
+  background: #F3F4F8;
   border: none;
-  outline: none;
-  width: 0;
-  transition: .4s;
-  font-size: 1.8rem;
-  line-height: 1rem;
-  transition: .4s;
+  padding-left: 27px;
 }
-#search-box:hover > .search-txt,
-#search-box > .search-txt:focus{
-  width: 300px;
-  padding: 0 1rem;
-  border-radius: 50%;
-}
-#search-box .search-btn{
-  width: 50px;
-  background-color: var(--search-bar);
-  border-radius: 50%;
-}
-#search-box .search-icon{
-  width: 100%;
-  height: 100%;
-  padding: 1rem 0 1rem 2.5rem;
-}
-#search-box .search-txt::placeholder{
-  color: var(--white);
-}
+
+
 
 /* 영화 리스트 부분 */
+.cards {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  width: 100vw;
+}
+
 #card {
-  margin: 8rem;
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  grid-auto-rows: 45rem;
-  grid-gap: 2.5rem;
+  place-items: center;
+  margin-top: 200px;
+  gap: 50px;
 }
+
 #movie-card-wrap {
-  padding: 1rem;
-  border-top: 2px solid var(--search-bar);
-  border-bottom: 2px solid var(--search-bar);
-  background-color: var(--title-dark);
+  width: 283px;
+  height: 554px;
+  flex-shrink: 0;
+  border-radius: 30px;
+  background: #FFF;
+  box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.05);
 }
+
 #movie-card-wrap .img {
-  overflow: hidden;
-  border-radius: 1rem;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  margin-top: 13px;
 }
-#movie-card-wrap .movie-img{
-  width: 100%;
-  object-fit: cover;
-  border-radius: 1rem;
-  cursor: pointer;
-  transition: .3s;
+
+#movie-card-wrap .movie-img {
+  width: 257px;
+  height: 345px;
+  flex-shrink: 0;
+  border-radius: 14px;
 }
-#movie-card-wrap .img:hover .movie-img,
-#moive-card-wrap .img:focus .movie-img{ 
+
+/* #movie-card-wrap .img:hover .movie-img,
+#moive-card-wrap .img:focus .movie-img {
   transform: scale(1.1);
+} */
+
+#movie-card-wrap .movie-title {
+  color: #606060;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin-top: 26px;
+  padding: 0 30px;
 }
-#movie-card-wrap .movie-title{
-  font-size: 2.5rem;
-  line-height: 3rem;
-  font-weight: 600;
-  color: var(--white);
-  padding: 1rem;
-}
-#movie-card-wrap .movie-content{
+
+/* #movie-card-wrap .movie-content {
   font-size: 1.5rem;
   line-height: 1.8rem;
   font-weight: 600;
@@ -148,42 +185,27 @@ body{
   overflow-x: hidden;
   height: 150px;
   opacity: 0.6;
-}
-#movie-card-wrap .movie-content::-webkit-scrollbar{
-  width: 0.6rem;
-  /* background-color: var(--title-right); */
-}
-#movie-card-wrap .movie-content::-webkit-scrollbar-thumb{
-  background-color: var(--title-right);
-  border-radius: 2rem;
-}
-#movie-card-wrap .movie-content::-webkit-scrollbar-track{
-  background-color: var(--white);
-}
+} */
+
+
 #movie-card-wrap .rating {
   display: flex;
-  margin: 1rem;
+  justify-content: center;
+  margin-top: 20px;
 }
-#movie-card-wrap .rating .rating-icon{
-  background-image: url("../icon/free-icon-font-trophy-3915001.svg");
-  background-repeat: no-repeat;
-  background-size: cover;
-  width: 30px;
-  height: 30px;
-}
-#movie-card-wrap .rating .movie-rating{
-  font-size: 1.5rem;
-  line-height: 1.8rem;
-  font-weight: 600;
-  color: var(--white);
-  padding: 1rem;
-  overflow: scroll;
-  height: 170px;
-  margin-left: 1.5rem;
+
+#movie-card-wrap .rating .movie-rating {
+  color: #606060;
+  text-align: center;
+  font-family: Pretendard;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
 }
 
 /* 페이지네이션 */
-#pagination{
+#pagination {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -191,27 +213,31 @@ body{
   height: 50px;
   color: var(--white);
 }
-#pagination .page-num{
+
+#pagination .page-num {
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   font-size: 3rem;
 }
-#pagination .page-num li{
+
+#pagination .page-num li {
   cursor: pointer;
   text-align: center;
   margin: 0 3rem 0 0.5rem;
   width: 40px;
   border-radius: 50%;
 }
-#pagination .page-num li:hover{
+
+#pagination .page-num li:hover {
   width: 40px;
   background-color: var(--title-right);
   border-radius: 50%;
   transition: .5s ease-in;
 }
-#pagination .fa-solid{
+
+#pagination .fa-solid {
   color: var(--white);
   font-size: 2rem;
   letter-spacing: 2rem;
