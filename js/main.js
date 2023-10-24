@@ -1,4 +1,4 @@
-// html 태그 가져오기
+d// html 태그 가져오기
 const card = document.querySelector("#card");
 const searchForm = document.querySelector("#search-box");
 const searchInput = document.querySelector("#search-box .search-txt");
@@ -20,7 +20,9 @@ const getMovie = (url) => {
     return response.json();
   })
   .then(data =>  {
+    console.log(data);
     const movies = data.results;
+    console.log(movies);
     movies.forEach(item => {
       const {
         title,
