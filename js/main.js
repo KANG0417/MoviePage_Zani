@@ -20,7 +20,9 @@ const getMovie = (url) => {
     return response.json();
   })
   .then(data =>  {
+    console.log(data);
     const movies = data.results;
+    console.log(movies);
     movies.forEach(item => {
       const {
         title,
