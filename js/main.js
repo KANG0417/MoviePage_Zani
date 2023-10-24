@@ -1,4 +1,3 @@
-d// html 태그 가져오기
 const card = document.querySelector("#card");
 const searchForm = document.querySelector("#search-box");
 const searchInput = document.querySelector("#search-box .search-txt");
@@ -16,7 +15,6 @@ const topRateUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY
 // 영화 조회 함수 생성
 const getMovie = (url) => {
   fetch(url)
-<<<<<<< HEAD
     .then(response => {
       return response.json();
     })
@@ -27,20 +25,6 @@ const getMovie = (url) => {
           title,
           overview,
           vote_average,
-=======
-  .then(response => {
-    return response.json();
-  })
-  .then(data =>  {
-    console.log(data);
-    const movies = data.results;
-    console.log(movies);
-    movies.forEach(item => {
-      const {
-        title,
-        overview,
-        vote_average,
->>>>>>> dev
           backdrop_path,
           id,
         } = item;
