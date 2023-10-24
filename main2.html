@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>영화 리뷰 작성</title>
+  <link rel="stylesheet" type="text/css" href="./css/detail.css">
+</head>
+
+<body>
+  <h1>영화 리뷰 작성</h1>
+
+  <form id="reviewForm">
+
+    
+    <fieldset id='reviewer' class="namePwd">
+      
+      <label for="nameInput">작성자:</label>
+      <input type="text" id="nameInput" required><br>
+      <label for="passwordInput">확인 비밀번호:</label>
+      <input type="password" id="passwordInput" required><br>
+      <!-- 리뷰 작성란 위에 별점 체크 기능 넣을 예정 -->
+      <textarea id="reviewInput" required></textarea><br>
+      <button id="btn" type="submit">리뷰 등록</button>
+
+    </fieldset>
+  </form>
+
+  <div id="reviews">
+    <!-- 리뷰 나타남 -->
+  </div>
+</body>
+<script src="./js/detail.js"></script>
+
+</html>
