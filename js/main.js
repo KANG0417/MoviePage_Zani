@@ -1,4 +1,3 @@
-d// html 태그 가져오기
 const card = document.querySelector("#card");
 const searchForm = document.querySelector("#search-box");
 const searchInput = document.querySelector("#search-box .search-txt");
@@ -16,22 +15,20 @@ const topRateUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY
 // 영화 조회 함수 생성
 const getMovie = (url) => {
   fetch(url)
-  .then(response => {
-    return response.json();
-  })
-  .then(data =>  {
-    console.log(data);
-    const movies = data.results;
-    console.log(movies);
-    movies.forEach(item => {
-      const {
-        title,
-        overview,
-        vote_average,
+    .then(response => {
+      return response.json();
+    })
+    .then(data => {
+      const movies = data.results;
+      movies.forEach(item => {
+        const {
+          title,
+          overview,
+          vote_average,
           backdrop_path,
           id,
         } = item;
-        
+
         let imgUrl = `https://image.tmdb.org/t/p/w500${backdrop_path}`;
         let noImg = "./img/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg";
         let cardHtml = `
@@ -41,13 +38,13 @@ const getMovie = (url) => {
             onclick="imgClick('${title}', ${id})" class="movie-img"></img>
           </div>
           <p class="movie-title">${title}</p>
-          <p class="movie-content">${overview}</p>
+          
           <div class="rating">
-            <p class="rating-icon"><span class="movie-rating">${Math.ceil(vote_average * 10) / 10}</span></p>
+            <span class="movie-rating">🏆  ${Math.ceil(vote_average * 10) / 10}</p>
             </div>
         </div>
         `;
-        
+
         if (overview !== "") {
           card.insertAdjacentHTML("beforeend", cardHtml);
         }
@@ -66,9 +63,9 @@ homeBtn.addEventListener("click", (e) => {
   card.innerHTML = "";
   getMovie(topRateUrl);
 });
-  
+
 // 버튼을 클릭하거나 엔터를 치면 검색 기능
-searchForm.addEventListener("submit", async(e) => {
+searchForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
   const inputVal = document.querySelector("#search-box .search-txt").value.toLowerCase();
