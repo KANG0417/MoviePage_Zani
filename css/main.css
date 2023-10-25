@@ -177,7 +177,7 @@ a {
   font-style: normal;
   font-weight: 700;
   line-height: normal;
-  margin-top: 26px;
+  margin-top: 36px;
   padding: 0 30px;
 }
 
@@ -197,14 +197,14 @@ a {
 #movie-card-wrap .rating {
   display: flex;
   justify-content: center;
-  margin-top: 20px;
+  margin-top: 30px;
 }
 
 #movie-card-wrap .rating .movie-rating {
   color: #606060;
   text-align: center;
   font-family: Pretendard;
-  font-size: 20px;
+  font-size: 32px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
