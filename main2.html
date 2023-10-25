@@ -1,36 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>영화 리뷰 작성</title>
+    <link rel="stylesheet" href="./css/detail.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>영화 리뷰 작성</title>
-  <link rel="stylesheet" type="text/css" href="./css/detail.css">
-</head>
+  <body>
+    <form id="reviewForm" onsubmit="return validate()" method="GET">
+      <fieldset id="reviewer">
+        <legend>영화 리뷰 작성</legend>
+        <table>
+          <tr></tr>
+          <tr>
+            <td>작성자</td>
+            <td>
+              <input
+                type="text"
+                id="nameInput"
+                autocomplete="off"
+                placeholder="작성해 주세요."
+              />
+            </td>
+            <td><span id="nameResult"></span></td>
+          </tr>
+          <tr>
+            <td>비밀번호</td>
+            <td>
+              <input
+                type="password"
+                id="passwordInput"
+                autocomplete="off"
+                placeholder="숫자 4자리"
+                maxlength="4"
+              />
+            </td>
+          </tr>
+          <!-- 리뷰 작성란 위에 별점 체크 기능 넣을 예정 -->
+          <tr>
+            <td>내용입력</td>
+            <td>
+              <textarea
+                id="reviewInput"
+                placeholder="최대100자."
+                autocomplete="off"
+                maxlength="100"
+              ></textarea>
+            </td>
+            <td><span id="reviewResult"></span></td>
+          </tr>
+        </table>
+        <div>
+          <button id="btn" type="submit">리뷰 등록</button>
+        </div>
+      </fieldset>
+    </form>
 
-<body>
-  <h1>영화 리뷰 작성</h1>
-
-  <form id="reviewForm">
-
-    
-    <fieldset id='reviewer' class="namePwd">
-      
-      <label for="nameInput">작성자:</label>
-      <input type="text" id="nameInput" required><br>
-      <label for="passwordInput">확인 비밀번호:</label>
-      <input type="password" id="passwordInput" required><br>
-      <!-- 리뷰 작성란 위에 별점 체크 기능 넣을 예정 -->
-      <textarea id="reviewInput" required></textarea><br>
-      <button id="btn" type="submit">리뷰 등록</button>
-
-    </fieldset>
-  </form>
-
-  <div id="reviews">
-    <!-- 리뷰 나타남 -->
-  </div>
-</body>
-<script src="./js/detail.js"></script>
-
+    <div id="reviews">
+      <!-- 리뷰 나타남 -->
+    </div>
+  </body>
+  <script src="./js/detail.js"></script>
 </html>
