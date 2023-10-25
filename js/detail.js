@@ -38,7 +38,7 @@ nameInput.addEventListener("keyup", function () {
   }
 });
 
-// 2. 작성자(한글) 유효성 검사
+// 2. 비밀번호(숫자갯수) 유효성 검사
 const passwordInput = document.getElementById("passwordInput");
 const passwordResult = document.getElementById("passwordResult");
 passwordInput.addEventListener("keyup", function () {
@@ -53,7 +53,7 @@ passwordInput.addEventListener("keyup", function () {
   }
 });
 
-// 3. 비밀번호(숫자갯수) 유효성 검사
+// 3. 작성자, 비밀번호 최종 유효성 검사
 function validate() {
   const nameInput = document.getElementById("nameInput");
   const regName = /^[가-힣]{2,5}$/;
