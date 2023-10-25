@@ -23,22 +23,19 @@ const getMovie = (url) => {
       movies.forEach(item => {
         const {
           title,
-          overview,
           vote_average,
           poster_path,
           id,
         } = item;
 
         let imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
-        let noImg = "./img/glyphicons-basic-38-picture-grey-c2ebdbb057f2a7614185931650f8cee23fa137b93812ccb132b9df511df1cfac.svg";
         let cardHtml = `
         <div id="movie-card-wrap">
           <div class="img">
-            <img src="${imgUrl !== null ? imgUrl : noImg}" alt="영화 이미지"
+            <img src="${imgUrl}" alt="영화 이미지"
             onclick="imgClick('${title}', ${id})" class="movie-img"></img>
           </div>
           <p class="movie-title">${title}</p>
-          
           <div class="rating">
             <span class="movie-rating">🏆  ${
               Math.ceil(vote_average * 10) / 10
@@ -47,9 +44,7 @@ const getMovie = (url) => {
         </div>
         `;
 
-        if (overview !== "") {
-          card.insertAdjacentHTML("beforeend", cardHtml);
-        }
+        card.insertAdjacentHTML("beforeend", cardHtml);
       });
     })
     .catch((err) => console.error(err));
