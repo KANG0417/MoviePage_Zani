@@ -4,6 +4,7 @@ const reviews = document.getElementById("reviews");
 
 const nameInput = document.getElementById("nameInput");
 const nameResult = document.getElementById("nameResult");
+const passwordInput = document.getElementById("passwordInput");
 
 reviewForm.addEventListener("submit", function (e) {
   e.preventDefault();
