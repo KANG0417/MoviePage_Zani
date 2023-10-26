@@ -4,6 +4,7 @@ const reviews = document.getElementById("reviews");
 const passwordInput = document.getElementById("passwordInput");
 const nameInput = document.getElementById("nameInput");
 const nameResult = document.getElementById("nameResult");
+const passwordResult = document.getElementById("passwordResult");
 
 reviewForm.addEventListener("submit", function (e) {
   e.preventDefault();
@@ -76,7 +77,6 @@ nameInput.addEventListener("keyup", function () {
 });
 
 // 2. 비밀번호(숫자갯수) 유효성 검사
-const passwordResult = document.getElementById("passwordResult");
 passwordInput.addEventListener("keyup", function () {
   const regPassword = /^[0-9]{4}$/;
 
@@ -91,13 +91,11 @@ passwordInput.addEventListener("keyup", function () {
 
 // 3. 작성자, 비밀번호 최종 유효성 검사
 function validate() {
-  const nameInput = document.getElementById("nameInput");
   const regName = /^[가-힣]{2,5}$/;
   if (!regName.test(nameInput.value)) {
     alert("작성자 형식이 올바르지 않습니다.");
     return false;
   }
-  const passwordInput = document.getElementById("passwordInput");
   const regPassword = /^[0-9]{4}$/;
   if (!regPassword.test(passwordInput.value)) {
     alert("비밀번호 형식이 올바르지 않습니다.");
@@ -123,7 +121,6 @@ function filterText() {
   }
 
   // 작성자란 비속어 유효성 검사
-  const nameInput = document.getElementById("nameInput");
   const nameText = nameInput.value;
 
   for (const word of badWords) {
