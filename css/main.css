@@ -1,7 +1,7 @@
 /* 폰트 */
 @font-face {
-  font-family: 'Pretendard-Regular';
-  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-family: "Pretendard-Regular";
+  src: url("https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff") format("woff");
   font-weight: 400;
   font-style: normal;
 }
@@ -22,8 +22,6 @@ a {
 
 /* reset css */
 
-
-
 /* 홈 이름 */
 #header {
   /* width: 100vw; */
@@ -42,7 +40,7 @@ a {
 }
 
 #header h1 {
-  color: #3A8CF5;
+  color: #3a8cf5;
   font-family: Pretendard;
   font-size: 48px;
   font-style: normal;
@@ -79,11 +77,10 @@ a {
 
 .first .bigImageSection {
   display: flex;
-  background-image: url('../img/bigImage.jpg');
+  background-image: url("../img/bigImage.jpg");
   width: 100vw;
   background-position: center;
   background-size: cover;
-
 }
 
 .bigImageTitle {
@@ -92,7 +89,7 @@ a {
 }
 
 .bigImageTitle .smallIndex {
-  color: #FFF;
+  color: #fff;
   font-family: Pretendard;
   font-size: 20px;
   font-style: normal;
@@ -101,7 +98,7 @@ a {
 }
 
 .bigImageTitle .bigTitle {
-  color: #FFF;
+  color: #fff;
   font-family: Pretendard;
   font-size: 128px;
   font-style: normal;
@@ -109,18 +106,15 @@ a {
   line-height: normal;
 }
 
-
 #search-input {
   width: 403px;
   height: 63px;
   flex-shrink: 0;
   border-radius: 65px;
-  background: #F3F4F8;
+  background: #f3f4f8;
   border: none;
   padding-left: 27px;
 }
-
-
 
 /* 영화 리스트 부분 */
 .cards {
@@ -144,7 +138,7 @@ a {
   height: 554px;
   flex-shrink: 0;
   border-radius: 30px;
-  background: #FFF;
+  background: #fff;
   box-shadow: 0px 0px 14px 3px rgba(0, 0, 0, 0.05);
 }
 
@@ -193,14 +187,7 @@ a {
   opacity: 0.6;
 } */
 
-
-#movie-card-wrap .rating {
-  display: flex;
-  justify-content: center;
-  margin-top: 30px;
-}
-
-#movie-card-wrap .rating .movie-rating {
+#movie-card-wrap .movie-rating {
   color: #606060;
   text-align: center;
   font-family: Pretendard;
@@ -208,6 +195,8 @@ a {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  display: flex;
+  justify-content: center;
 }
 
 #movie-card-wrap {
@@ -225,6 +214,8 @@ a {
 #movie-card-wrap:hover {
   transform: scale(1.1);
   color: #fff;
-  background-color: #3A8CF5;
-  box-shadow: 0px 26px 56px 0px rgba(0, 0, 0, 0.10), 0px 102px 102px 0px rgba(0, 0, 0, 0.09), 0px 230px 138px 0px rgba(0, 0, 0, 0.05), 0px 410px 164px 0px rgba(0, 0, 0, 0.01), 0px 640px 179px 0px rgba(0, 0, 0, 0.00);
+  background-color: #3a8cf5;
+  box-shadow: 0px 26px 56px 0px rgba(0, 0, 0, 0.1), 0px 102px 102px 0px rgba(0, 0, 0, 0.09),
+    0px 230px 138px 0px rgba(0, 0, 0, 0.05), 0px 410px 164px 0px rgba(0, 0, 0, 0.01),
+    0px 640px 179px 0px rgba(0, 0, 0, 0);
 }
