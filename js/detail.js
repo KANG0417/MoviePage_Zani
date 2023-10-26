@@ -2,9 +2,16 @@ const reviewForm = document.getElementById("reviewForm");
 const reviewInput = document.getElementById("reviewInput");
 const reviews = document.getElementById("reviews");
 
+<<<<<<< HEAD
+reviewForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  if (!validate()) return;
+  if (!filterText()) return;
+=======
 const nameInput = document.getElementById("nameInput");
 const passwordInput = document.getElementById("passwordInput");
 const nameResult = document.getElementById("nameResult");
+>>>>>>> 1a56fbb6c4a3f7c98fbdfe747ffeb02822895142
 
 // 현재 시간을 만드는 함수
 // ex) 23.05.20 13:24:55
@@ -59,3 +66,69 @@ nameInput.addEventListener("keyup", function () {
     nameResult.style.color = "lightcoral";
   }
 });
+<<<<<<< HEAD
+
+// 2. 비밀번호(숫자갯수) 유효성 검사
+const passwordInput = document.getElementById("passwordInput");
+const passwordResult = document.getElementById("passwordResult");
+passwordInput.addEventListener("keyup", function () {
+  const regPassword = /^[0-9]{4}$/;
+
+  if (regPassword.test(passwordInput.value)) {
+    passwordResult.innerHTML = "✔";
+    passwordResult.style.color = "lightseagreen";
+  } else {
+    passwordResult.innerHTML = "4개의 숫자만 입력하세요.";
+    passwordResult.style.color = "lightcoral";
+  }
+});
+
+// 3. 작성자, 비밀번호 최종 유효성 검사
+function validate() {
+  const nameInput = document.getElementById("nameInput");
+  const regName = /^[가-힣]{2,5}$/;
+  if (!regName.test(nameInput.value)) {
+    alert("작성자 형식이 올바르지 않습니다.");
+    return false;
+  }
+  const passwordInput = document.getElementById("passwordInput");
+  const regPassword = /^[0-9]{4}$/;
+  if (!regPassword.test(passwordInput.value)) {
+    alert("비밀번호 형식이 올바르지 않습니다.");
+    return false;
+  }
+  return true;
+}
+
+// 비속어 필터링 함수
+function filterText() {
+  const inputText = document.getElementById("reviewInput").value;
+
+  // 비속어 변수
+  const badWords = ["바보", "멍청이", "ㅅㅂ"];
+
+  // 내용란 비속어 유효성 검사
+  for (const word of badWords) {
+    const regex = new RegExp(word, "gi");
+    if (regex.test(inputText)) {
+      alert("비속어가 감지되었습니다!");
+      return;
+    }
+  }
+
+  // 작성자란 비속어 유효성 검사
+  const nameInput = document.getElementById("nameInput");
+  const nameText = nameInput.value;
+
+  for (const word of badWords) {
+    const regex = new RegExp(word, "gi");
+    if (regex.test(nameText)) {
+      alert("작성자란에 비속어가 감지되었습니다!");
+      return;
+    }
+  }
+
+  document.getElementById("filteredText").textContent = inputText;
+}
+=======
+>>>>>>> 1a56fbb6c4a3f7c98fbdfe747ffeb02822895142
