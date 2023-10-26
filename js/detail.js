@@ -5,6 +5,7 @@ const reviews = document.getElementById("reviews");
 reviewForm.addEventListener("submit", function (e) {
   e.preventDefault();
   if (!validate()) return;
+  if (!filterText()) return;
 
   // 사용자 입력 가져오기
   const reviewerName = nameInput.value;
@@ -68,4 +69,35 @@ function validate() {
     return false;
   }
   return true;
+}
+
+// 비속어 필터링 함수
+function filterText() {
+  const inputText = document.getElementById("reviewInput").value;
+
+  // 비속어 변수
+  const badWords = ["바보", "멍청이", "ㅅㅂ"];
+
+  // 내용란 비속어 유효성 검사
+  for (const word of badWords) {
+    const regex = new RegExp(word, "gi");
+    if (regex.test(inputText)) {
+      alert("비속어가 감지되었습니다!");
+      return;
+    }
+  }
+
+  // 작성자란 비속어 유효성 검사
+  const nameInput = document.getElementById("nameInput");
+  const nameText = nameInput.value;
+
+  for (const word of badWords) {
+    const regex = new RegExp(word, "gi");
+    if (regex.test(nameText)) {
+      alert("작성자란에 비속어가 감지되었습니다!");
+      return;
+    }
+  }
+
+  document.getElementById("filteredText").textContent = inputText;
 }

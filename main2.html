@@ -8,7 +8,7 @@
   </head>
 
   <body>
-    <form id="reviewForm" onsubmit="return validate()" method="GET">
+    <form id="reviewForm" method="GET">
       <fieldset id="reviewer">
         <legend>영화 리뷰 작성</legend>
         <table>
@@ -54,6 +54,7 @@
         </table>
         <div>
           <button id="btn" type="submit">리뷰 등록</button>
+          <p id="filteredText"></p>
         </div>
       </fieldset>
     </form>

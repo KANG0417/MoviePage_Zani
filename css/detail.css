@@ -23,13 +23,3 @@
 #btn {
   /* float: right; 이 코드가 들어가면 reviewForm의 백그라운드 컬러가 적용이 안됨*/
 }
-
-.confirm {
-  color: white;
-  background-color: lightseagreen;
-}
-
-.error {
-  color: white;
-  background-color: lightcoral;
-}
