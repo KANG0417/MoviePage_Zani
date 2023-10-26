@@ -1,15 +1,24 @@
 const reviewForm = document.getElementById("reviewForm");
 const reviewInput = document.getElementById("reviewInput");
 const reviews = document.getElementById("reviews");
-
+const passwordInput = document.getElementById("passwordInput");
 const nameInput = document.getElementById("nameInput");
 const nameResult = document.getElementById("nameResult");
-const passwordInput = document.getElementById("passwordInput");
 
 reviewForm.addEventListener("submit", function (e) {
   e.preventDefault();
   if (!validate()) return;
   if (!filterText()) return;
+
+  // 사용자 입력 가져오기
+  const reviewerName = nameInput.value;
+  const password = passwordInput.value;
+  const review = reviewInput.value;
+
+  // 리뷰 생성 지향님 코드 참고 예정
+  const reviewElement = document.createElement("div");
+  reviewElement.innerHTML = `<p>${review}</p><p>작성자: ${reviewerName}</p><p>비밀번호: ${password}</p>`;
+  reviews.appendChild(reviewElement);
 });
 
 // 현재 시간을 만드는 함수
