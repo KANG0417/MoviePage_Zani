@@ -2,16 +2,16 @@ const reviewForm = document.getElementById("reviewForm");
 const reviewInput = document.getElementById("reviewInput");
 const reviews = document.getElementById("reviews");
 
-<<<<<<< HEAD
+
 reviewForm.addEventListener("submit", function (e) {
   e.preventDefault();
   if (!validate()) return;
   if (!filterText()) return;
-=======
-const nameInput = document.getElementById("nameInput");
-const passwordInput = document.getElementById("passwordInput");
-const nameResult = document.getElementById("nameResult");
->>>>>>> 1a56fbb6c4a3f7c98fbdfe747ffeb02822895142
+
+  const nameInput = document.getElementById("nameInput");
+  const passwordInput = document.getElementById("passwordInput");
+  const nameResult = document.getElementById("nameResult");
+ 1a56fbb6c4a3f7c98fbdfe747ffeb02822895142
 
 // 현재 시간을 만드는 함수
 // ex) 23.05.20 13:24:55
@@ -33,7 +33,7 @@ const getReviewData = () => {
 
   // 조회 데이터 초기화
   reviews.innerHTML = "";
-
+  
   // 배열안에 값이 없다면 리턴
   if (null == userArr) {
     return false;
@@ -47,8 +47,8 @@ const getReviewData = () => {
     <p>${userArr[i].content}</p>
     `;
 
-    reviews.innerHTML += reviewHTML;
-  }
+  reviews.innerHTML += reviewHTML;
+}
 };
 
 getReviewData();
@@ -104,7 +104,7 @@ function validate() {
 function filterText() {
   const inputText = document.getElementById("reviewInput").value;
 
-  // 비속어 변수
+  // 비속어 
   const badWords = ["바보", "멍청이", "ㅅㅂ"];
 
   // 내용란 비속어 유효성 검사
