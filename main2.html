@@ -51,10 +51,22 @@
             </td>
             <td><span id="reviewResult"></span></td>
           </tr>
+          <tr>
+            <td>별점등록</td>
+            <select id="starRating">
+              <option selected>별점선택</option>
+              <option value="1" data-thumbnail="../icon/free-star.png">
+                ⭐
+              </option>
+              <option value="2" data-image="">⭐⭐</option>
+              <option value="3" data-image="">⭐⭐⭐</option>
+              <option value="4" data-image="">⭐⭐⭐⭐</option>
+              <option value="5" data-image="">⭐⭐⭐⭐⭐</option>
+            </select>
+          </tr>
         </table>
         <div>
           <button id="btn" type="submit">리뷰 등록</button>
-          <p id="filteredText"></p>
         </div>
       </fieldset>
     </form>
