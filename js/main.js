@@ -69,7 +69,7 @@ searchForm.addEventListener("submit", async (e) => {
     .value.toLowerCase();
   const queryUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${inputVal}&include_adult=false&language=ko-KR&page=1`;
 
-  if (inputVal.trim() === "") {
+  if (inputVal.trim() === "" || inputVal === null) {
     alert("검색어를 입력해주세요!");
     return false;
   }
