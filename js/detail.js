@@ -5,8 +5,14 @@ const passwordInput = document.getElementById("passwordInput");
 const nameInput = document.getElementById("nameInput");
 const nameResult = document.getElementById("nameResult");
 const passwordResult = document.getElementById("passwordResult");
-const contentText = document.getElementById("reviewResult");
 const starRating = document.getElementById("starRating");
+
+// 리뷰마다 고유생성값
+function uuidv4() {
+  return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
+    (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
+  );
+}
 
 // 현재 시간을 만드는 함수
 // ex) 23.05.20 13:24:55
@@ -69,6 +75,7 @@ reviewForm.addEventListener("submit", function (e) {
     content: review,
     date: getDate(),
     star,
+    uid: uuidv4()
   };
 
   // 전에 데이터를 조회하고 전에 데이터가 null이라면 배열에 담아줌
