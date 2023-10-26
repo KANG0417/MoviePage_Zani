@@ -2,16 +2,10 @@ const reviewForm = document.getElementById("reviewForm");
 const reviewInput = document.getElementById("reviewInput");
 const reviews = document.getElementById("reviews");
 
-<<<<<<< HEAD
 reviewForm.addEventListener("submit", function (e) {
   e.preventDefault();
   if (!validate()) return;
   if (!filterText()) return;
-=======
-const nameInput = document.getElementById("nameInput");
-const passwordInput = document.getElementById("passwordInput");
-const nameResult = document.getElementById("nameResult");
->>>>>>> 1a56fbb6c4a3f7c98fbdfe747ffeb02822895142
 
 // 현재 시간을 만드는 함수
 // ex) 23.05.20 13:24:55
@@ -66,7 +60,6 @@ nameInput.addEventListener("keyup", function () {
     nameResult.style.color = "lightcoral";
   }
 });
-<<<<<<< HEAD
 
 // 2. 비밀번호(숫자갯수) 유효성 검사
 const passwordInput = document.getElementById("passwordInput");
@@ -130,5 +123,3 @@ function filterText() {
 
   document.getElementById("filteredText").textContent = inputText;
 }
-=======
->>>>>>> 1a56fbb6c4a3f7c98fbdfe747ffeb02822895142
