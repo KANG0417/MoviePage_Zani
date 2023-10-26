@@ -1,24 +1,15 @@
 const reviewForm = document.getElementById("reviewForm");
 const reviewInput = document.getElementById("reviewInput");
 const reviews = document.getElementById("reviews");
+
 const nameInput = document.getElementById("nameInput");
-const passwordInput = document.getElementById("passwordInput");
 const nameResult = document.getElementById("nameResult");
+const passwordInput = document.getElementById("passwordInput");
 
 reviewForm.addEventListener("submit", function (e) {
   e.preventDefault();
   if (!validate()) return;
   if (!filterText()) return;
-
-  // 리뷰 생성 지향님 코드 참고 예정
-  const reviewElement = document.createElement("div");
-  reviewElement.innerHTML = `<p>${review}</p><p>작성자: ${reviewerName}</p><p>비밀번호: ${password}</p>`;
-  reviews.appendChild(reviewElement);
-
-  //입력 필드 초기화
-  nameInput.value = "";
-  passwordInput.value = "";
-  review.value = "";
 });
 
 // 현재 시간을 만드는 함수
