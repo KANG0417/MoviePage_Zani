@@ -6,22 +6,6 @@ const nameInput = document.getElementById("nameInput");
 const nameResult = document.getElementById("nameResult");
 const passwordResult = document.getElementById("passwordResult");
 
-reviewForm.addEventListener("submit", function (e) {
-  e.preventDefault();
-  if (!validate()) return;
-  if (!filterText()) return;
-
-  // 사용자 입력 가져오기
-  const reviewerName = nameInput.value;
-  const password = passwordInput.value;
-  const review = reviewInput.value;
-
-  const { reviewerName: userName, password, review: content } = userData;
-
-  let allData = localStorage.getItem();
-  getReviewData();
-});
-
 // 현재 시간을 만드는 함수
 // ex) 23.05.20 13:24:55
 const getDate = () => {
@@ -39,7 +23,6 @@ const getDate = () => {
 const getReviewData = () => {
   // 로컬스토리지에 담은 객체 가져오기
   const userArr = JSON.parse(localStorage.getItem("user"));
-
   // 조회 데이터 초기화
   reviews.innerHTML = "";
 
@@ -61,6 +44,49 @@ const getReviewData = () => {
 };
 
 getReviewData();
+
+reviewForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+  if (!validate()) return;
+  if (!filterText()) return;
+
+  // 사용자 입력 가져오기
+  const reviewerName = nameInput.value;
+  const password = passwordInput.value;
+  const review = reviewInput.value;
+
+  let userData = {
+    userName: reviewerName,
+    password: password,
+    content: review,
+    date: getDate(),
+  };
+
+  // 만약 데이터가 널이면 객체를 생성
+  // 전에 데이터를 배열에 넣어주고
+  let prevData = JSON.parse(localStorage.getItem("user"));
+  console.log(prevData);
+
+  if (prevData === null) {
+    prevData = [];
+  }
+
+  prevData.push(userData);
+  console.log(prevData);
+  localStorage.setItem("user", JSON.stringify(prevData));
+
+  // 데이터 조회 함수 실행
+  getReviewData();
+
+  // 입력필드 초기화
+  reviewerName = "";
+  password = "";
+  review = "";
+
+  // 확인 메세지 초기화
+  nameResult.innerHTML = "";
+  passwordResult.innerHTML = "";
+});
 
 // 유효성 검사
 // 1. 작성자(한글갯수) 유효성 검사
