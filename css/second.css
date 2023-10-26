@@ -48,6 +48,16 @@ a {
     display: flex;
 }
 
+#bigTitle {
+    color: #3A8CF5;
+    font-family: Pretendard;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+}
+
 .headerContents {
     display: flex;
     flex-direction: row;
