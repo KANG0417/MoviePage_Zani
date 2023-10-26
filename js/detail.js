@@ -66,7 +66,6 @@ nameInput.addEventListener("keyup", function () {
 });
 
 // 2. 비밀번호(숫자갯수) 유효성 검사
-const passwordInput = document.getElementById("passwordInput");
 const passwordResult = document.getElementById("passwordResult");
 passwordInput.addEventListener("keyup", function () {
   const regPassword = /^[0-9]{4}$/;
