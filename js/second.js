@@ -10,22 +10,22 @@
 const URLSearch = new URLSearchParams(document.location.search);
 
 // 2. 쿼리스트링에서 무비아이디값을 가져온다 (변수에 담는다)
-const byKey = 'movieId'
-const movieId = URLSearch.get(byKey)
+const byKey = "movieId";
+const movieId = URLSearch.get(byKey);
 
 // 3. 변수에 담은 무비아이디 값으로 fetch 를 해온다
-
 
 // 4. fetch를 해온 데이터를 document에 그려준다
 
 // 숙제 second.js 동작 설명하기
 
 const options = {
-    method: 'GET',
-    headers: {
-        accept: 'application/json',
-        Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMDcyODcyNTEzZDIxZWIwMWQwZjk3MWJlMjc3ZDI0NyIsInN1YiI6IjY1MmYzY2FlMDI0ZWM4MDBhZWNkYzY5NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RzzoQMlGgVCHK84-QzWPEQeYDt2kLHmdId_XaTaIbHU'
-    }
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMDcyODcyNTEzZDIxZWIwMWQwZjk3MWJlMjc3ZDI0NyIsInN1YiI6IjY1MmYzY2FlMDI0ZWM4MDBhZWNkYzY5NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RzzoQMlGgVCHK84-QzWPEQeYDt2kLHmdId_XaTaIbHU",
+  },
 };
 
 function fetchMovies(movieId) {
