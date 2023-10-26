@@ -35,22 +35,35 @@ function fetchMovies(movieId) {
     )
         .then((response) => response.json())
         .then((data) => {
-            const movies = data.results;
-            console.log(data)
-            console.log(movies);
+            const title = data.title;
+            const id = data.id;
+            const overview = data.overview;
+            const release_date = data.release_date;
+            const runtime = data.runtime;
+            const vote_average = data.vote_average;
+            const backdrop_path = data.backdrop_path;
+            console.log(data);
+            console.log(title);
+            console.log(id);
+            console.log(overview);
+            console.log(release_date);
+            console.log(runtime);
+            console.log(vote_average);
+            console.log(backdrop_path)
+
+            const movieDetiles = `
+            <div class='infor'>
+                <img src='https://image.tmdb.org/t/p/w500${backdrop_path}'
+                <div class='movieTitle'>${title}</div>
+                <div class='movieId'>${id}</div>
+                <div class='movieOverview'>${overview}</div>
+                <div class='movieRuntime'>${runtime}</div>
+                <div class='movieVote'>${vote_average}</div>
+            </div>
+            `
+
             const movieContainer = document.getElementById("movie-container");
-            movieContainer.innerHTML = '';
-            movies.forEach((movie) => {
-                const movieHtml = `
-            <div class='card' onclick='getMovieId(${movie.id})'>
-                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title} Poster">
-                <h2>${movie.title}</h2>
-                <p class = 'overview'>${movie.overview}</p>
-                <p class = 'vote'>${movie.vote_average}</p>
-            </div>`;
-                const movieContainer = document.getElementById("movie-container");
-                movieContainer.innerHTML += movieHtml;
-            });
+            movieContainer.innerHTML = movieDetiles;
         })
         .catch((err) => console.error(err));
 }
