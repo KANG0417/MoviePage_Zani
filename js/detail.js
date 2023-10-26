@@ -5,6 +5,8 @@ const passwordInput = document.getElementById("passwordInput");
 const nameInput = document.getElementById("nameInput");
 const nameResult = document.getElementById("nameResult");
 const passwordResult = document.getElementById("passwordResult");
+const contentText = document.getElementById("reviewResult");
+const starRating = document.getElementById("starRating");
 
 // 현재 시간을 만드는 함수
 // ex) 23.05.20 13:24:55
@@ -16,74 +18,79 @@ const getDate = () => {
   let date = String(today.getDate()).padStart(2, "0"); // 일
   const hours = String(today.getHours()).padStart(2, "0"); // 시
   const minutes = String(today.getMinutes()).padStart(2, "0"); // 분
-  const seconds = String(today.getSeconds()).padStart(2, "0"); // 초
-  return `${year}.${month}.${date} ${hours}:${minutes}:${seconds}`;
+  return `${year}.${month}.${date} ${hours}:${minutes}`;
 };
 
 const getReviewData = () => {
   // 로컬스토리지에 담은 객체 가져오기
   const userArr = JSON.parse(localStorage.getItem("user"));
-  // 조회 데이터 초기화
+  console.log(userArr);
   reviews.innerHTML = "";
 
-  // 배열안에 값이 없다면 리턴
-  if (null == userArr) {
+  // 값이 없다면 조회하지 않는다
+  if (userArr === null) {
     return false;
   }
 
   for (let i = 0; i < userArr.length; i++) {
     // 리뷰 생성
     let reviewHTML = `
+    <p>별점: ${userArr[i].star}</p>
     <p>작성자: ${userArr[i].userName}</p>
     <p>날짜: ${userArr[i].date}</p>
     <p>${userArr[i].content}</p>
+    <button>삭제</button>
     `;
 
     reviews.innerHTML += reviewHTML;
   }
 };
 
+// 리뷰 데이터 조회하는 함수 실행
 getReviewData();
 
 reviewForm.addEventListener("submit", function (e) {
   e.preventDefault();
+
+  // 유효성검사 함수
   if (!validate()) return;
-  if (!filterText()) return;
+  if (!filterWord()) return;
 
   // 사용자 입력 가져오기
   const reviewerName = nameInput.value;
-  const password = passwordInput.value;
+  const reviewPassword = passwordInput.value;
   const review = reviewInput.value;
+  const star = starRating.value;
 
-  let userData = {
+  // 배열에 저장할 데이터 담아주기
+  let reviewData = {
     userName: reviewerName,
-    password: password,
+    password: reviewPassword,
     content: review,
     date: getDate(),
+    star,
   };
 
-  // 만약 데이터가 널이면 객체를 생성
-  // 전에 데이터를 배열에 넣어주고
+  // 전에 데이터를 조회하고 전에 데이터가 null이라면 배열에 담아줌
   let prevData = JSON.parse(localStorage.getItem("user"));
-  console.log(prevData);
 
   if (prevData === null) {
     prevData = [];
   }
 
-  prevData.push(userData);
-  console.log(prevData);
+  prevData.unshift(reviewData);
+
+  // 객체를 JSON으로 변환하고 로컬스토리지에 저장
   localStorage.setItem("user", JSON.stringify(prevData));
 
-  // 데이터 조회 함수 실행
+  // 로컬스토리지에 담은 데이터 조회
   getReviewData();
 
-  // 입력필드 초기화
-  reviewerName = "";
-  password = "";
-  review = "";
-
-  // 확인 메세지 초기화
+  // //입력 필드 초기화
+  nameInput.value = "";
+  passwordInput.value = "";
+  reviewInput.value = "";
+  // 이름 유효성검사 메세지 초기화
   nameResult.innerHTML = "";
   passwordResult.innerHTML = "";
 });
@@ -127,12 +134,16 @@ function validate() {
     alert("비밀번호 형식이 올바르지 않습니다.");
     return false;
   }
+  if (starRating.value === "별점선택") {
+    alert("별점을 선택해주세요!");
+    return false;
+  }
   return true;
 }
 
 // 비속어 필터링 함수
-function filterText() {
-  const inputText = document.getElementById("reviewInput").value;
+function filterWord() {
+  const inputText = reviewInput.value;
 
   // 비속어
   const badWords = ["바보", "멍청이", "ㅅㅂ"];
@@ -142,7 +153,7 @@ function filterText() {
     const regex = new RegExp(word, "gi");
     if (regex.test(inputText)) {
       alert("비속어가 감지되었습니다!");
-      return;
+      return false;
     }
   }
 
@@ -153,9 +164,9 @@ function filterText() {
     const regex = new RegExp(word, "gi");
     if (regex.test(nameText)) {
       alert("작성자란에 비속어가 감지되었습니다!");
-      return;
+      return false;
     }
   }
 
-  document.getElementById("filteredText").textContent = inputText;
+  return true;
 }
