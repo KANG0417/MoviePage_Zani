@@ -1,17 +1,25 @@
 const reviewForm = document.getElementById("reviewForm");
 const reviewInput = document.getElementById("reviewInput");
 const reviews = document.getElementById("reviews");
-
+const nameInput = document.getElementById("nameInput");
+const passwordInput = document.getElementById("passwordInput");
+const nameResult = document.getElementById("nameResult");
 
 reviewForm.addEventListener("submit", function (e) {
   e.preventDefault();
   if (!validate()) return;
   if (!filterText()) return;
 
-  const nameInput = document.getElementById("nameInput");
-  const passwordInput = document.getElementById("passwordInput");
-  const nameResult = document.getElementById("nameResult");
- 1a56fbb6c4a3f7c98fbdfe747ffeb02822895142
+  // 리뷰 생성 지향님 코드 참고 예정
+  const reviewElement = document.createElement("div");
+  reviewElement.innerHTML = `<p>${review}</p><p>작성자: ${reviewerName}</p><p>비밀번호: ${password}</p>`;
+  reviews.appendChild(reviewElement);
+
+  //입력 필드 초기화
+  nameInput.value = "";
+  passwordInput.value = "";
+  review.value = "";
+});
 
 // 현재 시간을 만드는 함수
 // ex) 23.05.20 13:24:55
@@ -33,7 +41,7 @@ const getReviewData = () => {
 
   // 조회 데이터 초기화
   reviews.innerHTML = "";
-  
+
   // 배열안에 값이 없다면 리턴
   if (null == userArr) {
     return false;
@@ -47,8 +55,8 @@ const getReviewData = () => {
     <p>${userArr[i].content}</p>
     `;
 
-  reviews.innerHTML += reviewHTML;
-}
+    reviews.innerHTML += reviewHTML;
+  }
 };
 
 getReviewData();
@@ -66,10 +74,8 @@ nameInput.addEventListener("keyup", function () {
     nameResult.style.color = "lightcoral";
   }
 });
-<<<<<<< HEAD
 
 // 2. 비밀번호(숫자갯수) 유효성 검사
-const passwordInput = document.getElementById("passwordInput");
 const passwordResult = document.getElementById("passwordResult");
 passwordInput.addEventListener("keyup", function () {
   const regPassword = /^[0-9]{4}$/;
@@ -104,7 +110,7 @@ function validate() {
 function filterText() {
   const inputText = document.getElementById("reviewInput").value;
 
-  // 비속어 
+  // 비속어
   const badWords = ["바보", "멍청이", "ㅅㅂ"];
 
   // 내용란 비속어 유효성 검사
@@ -130,5 +136,3 @@ function filterText() {
 
   document.getElementById("filteredText").textContent = inputText;
 }
-=======
->>>>>>> 1a56fbb6c4a3f7c98fbdfe747ffeb02822895142
