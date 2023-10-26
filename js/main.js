@@ -6,7 +6,7 @@ const homeBtn = document.querySelector("#header h1");
 // 이미지를 클릭하면 알림창에 아이디값 뿌려주기
 const imgClick = (title, id) => {
   window.location.href = `second.html?movieId=${id}`;
-  alert(`(영화 id) ${id}, (영화 제목) ${title}`);
+  // alert(`(영화 id) ${id}, (영화 제목) ${title}`);
 };
 
 // API 가져오기
@@ -21,13 +21,8 @@ const getMovie = (url) => {
     })
     .then((data) => {
       const movies = data.results;
-      movies.forEach(item => {
-        const {
-          title,
-          vote_average,
-          poster_path,
-          id,
-        } = item;
+      movies.forEach((item) => {
+        const { title, vote_average, poster_path, id } = item;
 
         let imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
         let cardHtml = `
@@ -38,9 +33,7 @@ const getMovie = (url) => {
           </div>
           <p class="movie-title">${title}</p>
           <div class="rating">
-            <span class="movie-rating">🏆  ${
-              Math.ceil(vote_average * 10) / 10
-            }</p>
+            <span class="movie-rating">🏆  ${Math.ceil(vote_average * 10) / 10}</p>
             </div>
         </div>
         `;
@@ -65,9 +58,7 @@ homeBtn.addEventListener("click", (e) => {
 searchForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const inputVal = document
-    .querySelector("#search-box .search-txt")
-    .value.toLowerCase();
+  const inputVal = document.querySelector("#search-box .search-txt").value.toLowerCase();
   const queryUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${inputVal}&include_adult=false&language=ko-KR&page=1`;
 
   if (inputVal.trim() === "" || inputVal === null) {
