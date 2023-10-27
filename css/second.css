@@ -46,8 +46,15 @@ a {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    width: 100vw;
     text-align: center;
+}
+
+a:visited {
+    color: white;
+}
+
+a:link {
+    color: white;
 }
 
 #bigTitle {
@@ -63,7 +70,7 @@ a {
 .headerContents {
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     margin: 18px 162px;
 }
@@ -125,7 +132,7 @@ body {
     border-radius: 26px;
     margin-left: auto;
     margin-right: auto;
-    width: 1000px;
+    width: 450px;
 }
 
 .movieTitle {
@@ -135,7 +142,7 @@ body {
     font-style: normal;
     font-weight: 700;
     line-height: normal;
-    margin-top: 100px;
+    margin-top: 155px;
 }
 
 .movieOverview {
@@ -156,7 +163,7 @@ body {
     justify-content: center;
     color: #FFF;
     text-align: center;
-    margin-top: 331px;
+    margin-top: 155px;
     color: #FFF;
     text-align: center;
     font-family: Pretendard;
@@ -235,6 +242,7 @@ td {
     padding-bottom: 40px;
     padding-right: 40px;
     border-radius: 20px;
+    color: #fff;
 }
 
 #nameInput {
@@ -309,9 +317,4 @@ tbody {
     color: #fff;
     border: none;
     box-shadow: none;
-}
-
-#nameResult {
-    color: #fff;
-    font-size: 30px;
 }
