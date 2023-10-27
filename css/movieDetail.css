@@ -385,6 +385,11 @@ a:link {
   align-items: center;
 }
 
+#reviewsBox .reviewCnt {
+  color: #fff;
+  margin-bottom: 5rem;
+}
+
 #reviews {
   background: rgba(126, 126, 126, 0.15);
   backdrop-filter: blur(18.5px);

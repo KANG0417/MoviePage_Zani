@@ -8,8 +8,7 @@ const nameInput = document.getElementById("nameInput");
 const nameResult = document.getElementById("nameResult");
 const passwordResult = document.getElementById("passwordResult");
 const starRating = document.getElementById("starRating");
-const reviewCnt = document.querySelector("#reviewBox .reviewCnt");
-console.log(reviewCnt);
+const reviewCnt = document.querySelector("#reviewsBox  .reviewCnt");
 
 // 리뷰마다 고유값 생성
 function uuidv4() {
@@ -63,6 +62,9 @@ const getReviewData = async () => {
 
     reviews.innerHTML += reviewHTML;
   }
+
+  // 리뷰 데이터 갯수 조회
+  reviewCnt.innerHTML = `<span>${userArr.length}</span> 개의 리뷰가 달렸습니다`;
 };
 
 // 리뷰 데이터 조회하는 함수 실행
