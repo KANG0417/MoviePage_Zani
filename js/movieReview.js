@@ -1,3 +1,5 @@
+import { movieData } from "./movieDetail.js";
+
 const reviewForm = document.getElementById("reviewForm");
 const reviewInput = document.getElementById("reviewInput");
 const reviews = document.getElementById("reviews");
@@ -6,8 +8,9 @@ const nameInput = document.getElementById("nameInput");
 const nameResult = document.getElementById("nameResult");
 const passwordResult = document.getElementById("passwordResult");
 const starRating = document.getElementById("starRating");
+const reviewCnt = document.querySelector("#reviewsBox  .reviewCnt");
 
-// 리뷰마다 고유생성값
+// 리뷰마다 고유값 생성
 function uuidv4() {
   return ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, (c) =>
     (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
@@ -15,7 +18,7 @@ function uuidv4() {
 }
 
 // 현재 시간을 만드는 함수
-// ex) 23.05.20 13:24:55
+// ex) 23.05.20 13:24
 const getDate = () => {
   let today = new Date();
 
@@ -27,10 +30,13 @@ const getDate = () => {
   return `${year}.${month}.${date} ${hours}:${minutes}`;
 };
 
-const getReviewData = () => {
+const getReviewData = async () => {
+  // 구조분해할당으로 모듈로 내보낸 객체데이터 가져오기
+  const { title: movieTitle } = await movieData();
+
   // 로컬스토리지에 담은 객체 가져오기
-  const userArr = JSON.parse(localStorage.getItem("user"));
-  console.log(userArr);
+  const userArr = JSON.parse(localStorage.getItem(movieTitle));
+
   reviews.innerHTML = "";
 
   // 값이 없다면 조회하지 않는다
@@ -41,22 +47,34 @@ const getReviewData = () => {
   for (let i = 0; i < userArr.length; i++) {
     // 리뷰 생성
     let reviewHTML = `
-    <p>별점: ${userArr[i].star}</p>
-    <p>작성자: ${userArr[i].userName}</p>
-    <p>날짜: ${userArr[i].date}</p>
-    <p>${userArr[i].content}</p>
-    <button>삭제</button>
+    <div id = "reviewText">
+    <p class = "reviewName">작성자 : ${userArr[i].userName} </p>
+    ${userArr[i].star === "1" ? "<p>⭐</p>" : ""}
+    ${userArr[i].star === "2" ? "<p>⭐⭐</p>" : ""}     
+    ${userArr[i].star === "3" ? "<p>⭐⭐⭐</p>" : ""}     
+    ${userArr[i].star === "4" ? "<p>⭐⭐⭐⭐</p>" : ""}     
+    ${userArr[i].star === "5" ? "<p>⭐⭐⭐⭐⭐</p>" : ""}     
+    <p class = "reviewContent">${userArr[i].content}</p>
+    <p class = "reviewEtc">${userArr[i].date}
+    </div>
     `;
+    // <button class="reviewDelbtn" value="${userArr[i].uid}">삭제</button></p>
 
     reviews.innerHTML += reviewHTML;
   }
+
+  // 리뷰 데이터 갯수 조회
+  reviewCnt.innerHTML = `<span>${userArr.length}</span> 개의 리뷰가 달렸습니다`;
 };
 
 // 리뷰 데이터 조회하는 함수 실행
 getReviewData();
 
-reviewForm.addEventListener("submit", function (e) {
+reviewForm.addEventListener("submit", async function (e) {
   e.preventDefault();
+
+  // 구조분해할당으로 모듈로 내보낸 객체데이터 가져오기
+  const { title: movieTitle, id: movieId } = await movieData();
 
   // 유효성검사 함수
   if (!validate()) return;
@@ -75,20 +93,23 @@ reviewForm.addEventListener("submit", function (e) {
     content: review,
     date: getDate(),
     star,
-    uid: uuidv4()
+    uid: uuidv4(),
+    title: movieTitle,
+    movieId: movieId
   };
 
   // 전에 데이터를 조회하고 전에 데이터가 null이라면 배열에 담아줌
-  let prevData = JSON.parse(localStorage.getItem("user"));
+  let prevData = JSON.parse(localStorage.getItem(movieTitle));
 
   if (prevData === null) {
     prevData = [];
   }
 
+  // 마지막으로 쓴 리뷰가 맨 처음에 추가
   prevData.unshift(reviewData);
 
   // 객체를 JSON으로 변환하고 로컬스토리지에 저장
-  localStorage.setItem("user", JSON.stringify(prevData));
+  localStorage.setItem(movieTitle, JSON.stringify(prevData));
 
   // 로컬스토리지에 담은 데이터 조회
   getReviewData();
