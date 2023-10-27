@@ -38,23 +38,9 @@
   }
 }
 
-
-
-* {
-  margin: 0px;
-  padding: 0px;
+body {
+  overflow-x: hidden;
 }
-
-ul,
-ol {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* reset css */
 
 /* 홈 이름 */
 #header {
@@ -113,7 +99,7 @@ a {
   background-image: url("../img/BGimage.jpg");
   width: 100vw;
   background-position: center;
-  background-size: cover;
+  background-size: 100% 100%;
 }
 
 .bigImageTitle {
