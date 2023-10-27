@@ -277,11 +277,6 @@ tr {
 }
 
 td {
-  /*     font-size: 40px;
-    padding-bottom: 40px;
-    padding-right: 40px;
-    border-radius: 20px;
-    color: #fff; */
   font-size: 31px;
   padding-bottom: 40px;
   padding-right: 40px;
@@ -296,6 +291,7 @@ td {
   border: none;
   border-radius: 5px;
   color: #fff;
+  padding: 1.5rem;
 }
 
 #passwordInput {
@@ -305,6 +301,7 @@ td {
   border: none;
   border-radius: 5px;
   color: #fff;
+  padding: 1.5rem;
 }
 
 #reviewInput {
@@ -314,6 +311,7 @@ td {
   border: none;
   border-radius: 5px;
   color: #fff;
+  padding: 1.5rem;
 }
 
 #starRating {
@@ -322,6 +320,7 @@ td {
   backdrop-filter: blur(18.5px);
   border: none;
   border-radius: 5px;
+  padding: 1rem;
 }
 
 #starRating {
@@ -334,7 +333,7 @@ tbody {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px;
+  padding: 60px 40px 40px 40px;
   border-radius: 40px;
   border: 0.5px solid #656565;
 }

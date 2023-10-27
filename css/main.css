@@ -24,13 +24,12 @@ a {
 
 /* 홈 이름 */
 #header {
-  /* width: 100vw; */
   box-shadow: 0px 4px 53px 0px rgba(0, 0, 0, 0.15);
-  /* padding: 32px 162px 32px 162px; */
-  /* min-width: 620px; */
-  /* position: fixed; */
-  background-color: #fff;
+  width: 100vw;
+  padding: 32px 162px 32px 162px;
+  min-width: 620px;
   position: fixed;
+  background-color: #fff;
   left: 0;
   right: 0;
   width: 100%;
