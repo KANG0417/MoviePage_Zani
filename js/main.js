@@ -1,6 +1,6 @@
 const card = document.querySelector("#card");
 const searchForm = document.querySelector("#search-box");
-const searchInput = document.querySelector("#search-box .search-txt");
+const searchInput = document.querySelector("#search-input");
 const homeBtn = document.querySelector("#header h1");
 
 // 이미지를 클릭하면 알림창에 아이디값 뿌려주기
@@ -56,7 +56,7 @@ homeBtn.addEventListener("click", (e) => {
 searchForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  const inputVal = document.querySelector("#search-box .search-txt").value.toLowerCase();
+  const inputVal = searchInput.value.toLowerCase();
   const queryUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${inputVal}&include_adult=false&language=ko-KR&page=1`;
 
   if (inputVal.trim() === "" || inputVal === null) {

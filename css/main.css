@@ -57,11 +57,11 @@ a {
   margin: 18px 162px;
 }
 
-.headerContents div {
+#header #search-box {
   display: flex;
 }
 
-.headerContents div button {
+#header #search-box .search-button {
   margin-right: 20px;
   width: 63px;
   height: 63px;
