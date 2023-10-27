@@ -40,6 +40,13 @@ a {
 }
 
 #header h1 {
+/*     color: #fff;
+    font-family: Pretendard;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    text-align: center; */
   color: #fff;
   font-family: Pretendard;
   font-size: 48px;
@@ -48,6 +55,14 @@ a {
   line-height: normal;
   width: 100vw;
   text-align: center;
+}
+
+a:visited {
+    color: white;
+}
+
+a:link {
+    color: white;
 }
 
 #bigTitle {
@@ -61,6 +76,11 @@ a {
 }
 
 .headerContents {
+/*     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 18px 162px; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -120,6 +140,20 @@ body {
 }
 
 .infor img {
+/*     border-radius: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 450px;
+}
+
+.movieTitle {
+    color: #FFF;
+    font-family: Pretendard;
+    font-size: 150px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-top: 155px; */
   border-radius: 26px;
   margin-left: auto;
   margin-right: auto;
@@ -149,6 +183,20 @@ body {
 }
 
 .RunVote {
+/*     display: flex;
+    flex-direction: row;
+    justify-content: center;
+    color: #FFF;
+    text-align: center;
+    margin-top: 155px;
+    color: #FFF;
+    text-align: center;
+    font-family: Pretendard;
+    font-size: 150px;
+    font-style: normal;
+    font-weight: 900;
+    line-height: normal;
+    margin-bottom: 160px; */
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -227,6 +275,11 @@ tr {
 }
 
 td {
+/*     font-size: 40px;
+    padding-bottom: 40px;
+    padding-right: 40px;
+    border-radius: 20px;
+    color: #fff; */
   font-size: 31px;
   padding-bottom: 40px;
   padding-right: 40px;
@@ -301,6 +354,11 @@ tbody {
 }
 
 #btn:hover {
+/*     background-color: #3A8CF5;
+    color: #fff;
+    border: none;
+    box-shadow: none; */
+}
   background-color: #3a8cf5;
   color: #fff;
   border: none;
