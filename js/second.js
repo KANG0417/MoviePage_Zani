@@ -1,11 +1,3 @@
-// const options = {
-//     method: 'GET',
-//     headers: {
-//         accept: 'application/json',
-//         Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMDcyODcyNTEzZDIxZWIwMWQwZjk3MWJlMjc3ZDI0NyIsInN1YiI6IjY1MmYzY2FlMDI0ZWM4MDBhZWNkYzY5NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RzzoQMlGgVCHK84-QzWPEQeYDt2kLHmdId_XaTaIbHU'
-//     }
-// };
-
 // 1. 쿼리스트링을 불러온다
 const URLSearch = new URLSearchParams(document.location.search);
 
@@ -20,38 +12,35 @@ const movieId = URLSearch.get(byKey);
 // 숙제 second.js 동작 설명하기
 
 const options = {
-    method: "GET",
-    headers: {
-        accept: "application/json",
-        Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMDcyODcyNTEzZDIxZWIwMWQwZjk3MWJlMjc3ZDI0NyIsInN1YiI6IjY1MmYzY2FlMDI0ZWM4MDBhZWNkYzY5NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RzzoQMlGgVCHK84-QzWPEQeYDt2kLHmdId_XaTaIbHU",
-    },
+  method: "GET",
+  headers: {
+    accept: "application/json",
+    Authorization:
+      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMDcyODcyNTEzZDIxZWIwMWQwZjk3MWJlMjc3ZDI0NyIsInN1YiI6IjY1MmYzY2FlMDI0ZWM4MDBhZWNkYzY5NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RzzoQMlGgVCHK84-QzWPEQeYDt2kLHmdId_XaTaIbHU"
+  }
 };
 
 function fetchMovies(movieId) {
-    fetch(
-        `https://api.themoviedb.org/3/movie/${movieId}?language=ko-KR`,
-        options,
-    )
-        .then((response) => response.json())
-        .then((data) => {
-            const title = data.title;
-            const id = data.id;
-            const overview = data.overview;
-            const release_date = data.release_date;
-            const runtime = data.runtime;
-            const vote_average = data.vote_average;
-            const poster_path = data.poster_path;
-            console.log(data);
-            console.log(title);
-            console.log(id);
-            console.log(overview);
-            console.log(release_date);
-            console.log(runtime);
-            console.log(vote_average);
-            console.log(poster_path)
+  fetch(`https://api.themoviedb.org/3/movie/${movieId}?language=ko-KR`, options)
+    .then((response) => response.json())
+    .then((data) => {
+      const title = data.title;
+      const id = data.id;
+      const overview = data.overview;
+      const release_date = data.release_date;
+      const runtime = data.runtime;
+      const vote_average = data.vote_average;
+      const poster_path = data.poster_path;
+      console.log(data);
+      console.log(title);
+      console.log(id);
+      console.log(overview);
+      console.log(release_date);
+      console.log(runtime);
+      console.log(vote_average);
+      console.log(poster_path);
 
-            const movieDetiles = `
+      const movieDetiles = `
             <div class='infor'>
                 <img src='https://image.tmdb.org/t/p/w500${poster_path}'>
                 <div class='movieTitle'>${title}</div>
@@ -61,12 +50,12 @@ function fetchMovies(movieId) {
                     <div class='movieRuntime'><p>러닝타임</p>${runtime}</div>
                 </div>
             </div>
-            `
+            `;
 
-            const movieContainer = document.getElementById("movie-container");
-            movieContainer.innerHTML = movieDetiles;
-        })
-        .catch((err) => console.error(err));
+      const movieContainer = document.getElementById("movie-container");
+      movieContainer.innerHTML = movieDetiles;
+    })
+    .catch((err) => console.error(err));
 }
 
 fetchMovies(movieId);
