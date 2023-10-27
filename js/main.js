@@ -31,7 +31,6 @@ const getMovie = (url) => {
             onclick="imgClick('${title}', ${id})" class="movie-img"></img>
           </div>
           <p class="movie-title">${title}</p>
-          <p></p>
           <span class="movie-rating">🏆  ${Math.ceil(vote_average * 10) / 10}</span>
         </div>
         `;
