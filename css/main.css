@@ -76,7 +76,7 @@ a {
 
 .first .bigImageSection {
   display: flex;
-  background-image: url("../img/bigImage.jpg");
+  background-image: url("../img/BGimage.jpg");
   width: 100vw;
   background-position: center;
   background-size: cover;
