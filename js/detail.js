@@ -43,11 +43,12 @@ const getReviewData = () => {
   for (let i = 0; i < userArr.length; i++) {
     // 리뷰 생성
     let reviewHTML = `
-    <p>별점: ${userArr[i].star}</p>
-    <p>작성자: ${userArr[i].userName}</p>
-    <p>날짜: ${userArr[i].date}</p>
-    <p>${userArr[i].content}</p>
-    <button>삭제</button>
+    <div id = "text">
+    <p id = "name">작성자 : ${userArr[i].userName} </p>
+    <p>⭐ : ${userArr[i].star}</p>
+    <p id = "content">${userArr[i].content}</p>
+    <p id = "etc">날짜 : ${userArr[i].date} <button>삭제</button></p>    
+    </div>
     `;
 
     reviews.innerHTML += reviewHTML;
@@ -114,7 +115,7 @@ nameInput.addEventListener("keyup", function () {
     nameResult.style.color = "lightseagreen";
   } else {
     nameResult.innerHTML = "2~5글자의 한글만 입력하세요.";
-    nameResult.style.color = "#fff";
+    nameResult.style.color = "lightcoral";
   }
 });
 
