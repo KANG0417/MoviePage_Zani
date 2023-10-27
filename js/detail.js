@@ -46,17 +46,18 @@ const getReviewData = async () => {
   for (let i = 0; i < userArr.length; i++) {
     // 리뷰 생성
     let reviewHTML = `
-    <div id = "text">
-    <p id = "name">작성자 : ${userArr[i].userName} </p>
+    <div id = "reviewText">
+    <p class = "reviewName">작성자 : ${userArr[i].userName} </p>
     ${userArr[i].star === "1" ? "<p>⭐</p>" : ""}
     ${userArr[i].star === "2" ? "<p>⭐⭐</p>" : ""}     
     ${userArr[i].star === "3" ? "<p>⭐⭐⭐</p>" : ""}     
     ${userArr[i].star === "4" ? "<p>⭐⭐⭐⭐</p>" : ""}     
     ${userArr[i].star === "5" ? "<p>⭐⭐⭐⭐⭐</p>" : ""}     
-    <p id = "content">${userArr[i].content}</p>
-    <p id = "etc">${userArr[i].date} <button class="reviewDelbtn">삭제</button></p>    
+    <p class = "reviewContent">${userArr[i].content}</p>
+    <p class = "reviewEtc">${userArr[i].date}
     </div>
     `;
+    // <button class="reviewDelbtn" value="${userArr[i].uid}">삭제</button></p>
 
     reviews.innerHTML += reviewHTML;
   }
@@ -193,3 +194,7 @@ function filterWord() {
 
   return true;
 }
+
+// 삭제 시키기
+
+console.log(document.getElementById("#etc"));
