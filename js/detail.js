@@ -112,7 +112,7 @@ nameInput.addEventListener("keyup", function () {
     nameResult.style.color = "lightseagreen";
   } else {
     nameResult.innerHTML = "2~5글자의 한글만 입력하세요.";
-    nameResult.style.color = "lightcoral";
+    nameResult.style.color = "#fff";
   }
 });
 
