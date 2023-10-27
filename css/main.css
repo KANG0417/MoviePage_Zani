@@ -132,6 +132,7 @@ a {
   place-items: center;
   margin-top: 200px;
   gap: 50px;
+  margin-bottom: 100px;
 }
 
 #movie-card-wrap {
