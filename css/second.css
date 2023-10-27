@@ -91,6 +91,8 @@ a {
 
 body {
   background: linear-gradient(180deg, #3a8cf5 -1.7%, #000 100%);
+  height: auto;
+  margin-bottom: 5rem;
 }
 
 #movie-container {
@@ -340,7 +342,7 @@ a:link {
   width: 50%;
 }
 
-#text {
+#reviewText {
   margin-bottom: 50px;
 }
 
@@ -348,14 +350,14 @@ p {
   font-size: 25px;
 }
 
-#name {
+#reviewText .reviewName {
   text-align: left;
 }
 
-#content {
+#reviewText .reviewContent {
   font-size: 35px;
 }
 
-#etc {
+#reviewText .reviewEtc {
   text-align: right;
 }
