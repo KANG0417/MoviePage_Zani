@@ -14,7 +14,7 @@ const fetchMovies = () => {
     .then((response) => response.json())
     .then((data) => {
       // 객체 형태 데이터를 구조분해할당 시켜줘서 변수에 담아주기
-      const { title, id, overview, release_date, runtime, vote_average, poster_path } = data;
+      const { title, overview, runtime, vote_average, poster_path } = data;
 
       // 4. fetch를 해온 데이터를 document에 렌더링해준다
       const movieDetiles = `
@@ -36,3 +36,9 @@ const fetchMovies = () => {
 };
 
 fetchMovies();
+
+export const movieData = async () => {
+  const response = await fetch(detailUrl);
+  const { title, id } = await response.json();
+  return { title, id };
+};
