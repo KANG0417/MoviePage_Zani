@@ -1,4 +1,4 @@
-import { movieData } from "./second.js";
+import { movieData } from "./movieDetail.js";
 
 const reviewForm = document.getElementById("reviewForm");
 const reviewInput = document.getElementById("reviewInput");
