@@ -6,21 +6,9 @@
   font-style: normal;
 }
 
-* {
-  margin: 0px;
-  padding: 0px;
+body {
+  overflow-x: hidden;
 }
-
-ul,
-ol {
-  list-style: none;
-}
-
-a {
-  text-decoration: none;
-}
-
-/* reset css */
 
 /* 홈 이름 */
 #header {
