@@ -8,7 +8,7 @@ const nameInput = document.getElementById("nameInput");
 const nameResult = document.getElementById("nameResult");
 const passwordResult = document.getElementById("passwordResult");
 const starRating = document.getElementById("starRating");
-const reviewCnt = document.querySelector("#reviewBox .reviewCnt");
+const reviewCnt = document.querySelector("#revieswBox .reviewCnt");
 console.log(reviewCnt);
 
 // 리뷰마다 고유값 생성
