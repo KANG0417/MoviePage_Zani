@@ -15,7 +15,6 @@
     <header id="header">
         <div class="headerContents">
             <h1>ZANI</h1>
-            <div id="bigTitle"></div>
         </div>
     </header>
     <!-- <div id="movie-info">
@@ -24,60 +23,64 @@
         <p>개봉일: <span id="release-date"></span></p>
         <p>평점: <span id="vote-average"></span></p>
     </div> -->
-    <div id="movie-container"></div>
+    <div id="movie-container">
+
+    </div>
     <form id="reviewForm" method="post">
-      <fieldset id="reviewer">
         <legend>영화 리뷰 작성</legend>
-        <table>
-          <tr></tr>
-          <tr>
-            <td>작성자</td>
-            <td>
-              <input type="text" id="nameInput" autocomplete="off" placeholder="한글 2~5자리" />
-            </td>
-            <td><span id="nameResult"></span></td>
-          </tr>
-          <tr>
-            <td>비밀번호</td>
-            <td>
-              <input type="password" id="passwordInput" autocomplete="off" placeholder="숫자 4자리" maxlength="4" />
-            </td>
-            <td><span id="passwordResult"></span></td>
-          </tr>
-          <!-- 리뷰 작성란 위에 별점 체크 기능 넣을 예정 -->
-          <tr>
-            <td>내용입력</td>
-            <td>
-              <textarea id="reviewInput" placeholder="최대100자." autocomplete="off" maxlength="100"></textarea>
-            </td>
-            <td><span id="reviewResult"></span></td>
-          </tr>
-          <tr>
-            <td>별점등록</td>
-            <td>
-              <select id="starRating">
-                <option selected>별점선택</option>
-                <option value="1">⭐</option>
-                <option value="2">⭐⭐</option>
-                <option value="3">⭐⭐⭐</option>
-                <option value="4">⭐⭐⭐⭐</option>
-                <option value="5">⭐⭐⭐⭐⭐</option>
-              </select>
-            </td>
-          </tr>
-        </table>
-        <div>
-          <button id="btn" type="submit">리뷰 등록</button>
-        </div>
-      </fieldset>
+        <fieldset id="reviewer">
+
+            <table>
+                <tr></tr>
+                <tr>
+                    <td>작성자</td>
+                    <td>
+                        <input type="text" id="nameInput" autocomplete="off" placeholder="한글 2~5자리" />
+                    </td>
+                    <td><span id="nameResult"></span></td>
+                </tr>
+                <tr>
+                    <td>비밀번호</td>
+                    <td>
+                        <input type="password" id="passwordInput" autocomplete="off" placeholder="숫자 4자리"
+                            maxlength="4" />
+                    </td>
+                    <td><span id="passwordResult"></span></td>
+                </tr>
+                <!-- 리뷰 작성란 위에 별점 체크 기능 넣을 예정 -->
+                <tr>
+                    <td>내용입력</td>
+                    <td>
+                        <textarea id="reviewInput" placeholder="최대100자." autocomplete="off" maxlength="100"></textarea>
+                    </td>
+                    <td><span id="reviewResult"></span></td>
+                </tr>
+                <tr>
+                    <td>별점등록</td>
+                    <td>
+                        <select id="starRating">
+                            <option selected>별점선택</option>
+                            <option value="1">⭐</option>
+                            <option value="2">⭐⭐</option>
+                            <option value="3">⭐⭐⭐</option>
+                            <option value="4">⭐⭐⭐⭐</option>
+                            <option value="5">⭐⭐⭐⭐⭐</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            <div class="sumit">
+                <button id="btn" type="submit">리뷰 등록</button>
+            </div>
+        </fieldset>
     </form>
 
     <div id="reviews">
-      <!-- 리뷰 나타남 -->
+        <!-- 리뷰 나타남 -->
     </div>
-    </body>
-    <script src="./js/detail.js"></script>
-    <script src="./js/second.js"></script>
+</body>
+<script src="./js/detail.js"></script>
+<script src="./js/second.js"></script>
 </body>
 
 </html>

@@ -20,12 +20,12 @@ const movieId = URLSearch.get(byKey);
 // 숙제 second.js 동작 설명하기
 
 const options = {
-  method: "GET",
-  headers: {
-    accept: "application/json",
-    Authorization:
-      "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMDcyODcyNTEzZDIxZWIwMWQwZjk3MWJlMjc3ZDI0NyIsInN1YiI6IjY1MmYzY2FlMDI0ZWM4MDBhZWNkYzY5NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RzzoQMlGgVCHK84-QzWPEQeYDt2kLHmdId_XaTaIbHU",
-  },
+    method: "GET",
+    headers: {
+        accept: "application/json",
+        Authorization:
+            "Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMDcyODcyNTEzZDIxZWIwMWQwZjk3MWJlMjc3ZDI0NyIsInN1YiI6IjY1MmYzY2FlMDI0ZWM4MDBhZWNkYzY5NiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.RzzoQMlGgVCHK84-QzWPEQeYDt2kLHmdId_XaTaIbHU",
+    },
 };
 
 function fetchMovies(movieId) {
@@ -41,7 +41,7 @@ function fetchMovies(movieId) {
             const release_date = data.release_date;
             const runtime = data.runtime;
             const vote_average = data.vote_average;
-            const backdrop_path = data.backdrop_path;
+            const poster_path = data.poster_path;
             console.log(data);
             console.log(title);
             console.log(id);
@@ -49,16 +49,17 @@ function fetchMovies(movieId) {
             console.log(release_date);
             console.log(runtime);
             console.log(vote_average);
-            console.log(backdrop_path)
+            console.log(poster_path)
 
             const movieDetiles = `
             <div class='infor'>
-                <img src='https://image.tmdb.org/t/p/w500${backdrop_path}'
+                <img src='https://image.tmdb.org/t/p/w500${poster_path}'>
                 <div class='movieTitle'>${title}</div>
-                <div class='movieId'>${id}</div>
                 <div class='movieOverview'>${overview}</div>
-                <div class='movieRuntime'>${runtime}</div>
-                <div class='movieVote'>${vote_average}</div>
+                <div class='RunVote'>
+                    <div class='movieVote'><p>평점</p>${vote_average}</div>
+                    <div class='movieRuntime'><p>러닝타임</p>${runtime}</div>
+                </div>
             </div>
             `
 
