@@ -23,7 +23,7 @@ const fetchMovies = () => {
                 <div class='movieTitle'>${title}</div>
                 <div class='movieOverview'>${overview}</div>
                 <div class='RunVote'>
-                    <div class='movieVote'><p>평점</p>${vote_average}</div>
+                    <div class='movieVote'><p>평점</p>${Math.ceil(vote_average * 10) / 10}</div>
                     <div class='movieRuntime'><p>러닝타임</p>${runtime}</div>
                 </div>
             </div>

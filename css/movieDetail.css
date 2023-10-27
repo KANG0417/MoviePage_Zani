@@ -40,7 +40,7 @@ a {
 }
 
 #header h1 {
-/*     color: #fff;
+  /*     color: #fff;
     font-family: Pretendard;
     font-size: 48px;
     font-style: normal;
@@ -58,11 +58,11 @@ a {
 }
 
 a:visited {
-    color: white;
+  color: white;
 }
 
 a:link {
-    color: white;
+  color: white;
 }
 
 #bigTitle {
@@ -76,7 +76,7 @@ a:link {
 }
 
 .headerContents {
-/*     display: flex;
+  /*     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -111,6 +111,8 @@ a:link {
 
 body {
   background: linear-gradient(180deg, #3a8cf5 -1.7%, #000 100%);
+  height: auto;
+  margin-bottom: 5rem;
 }
 
 #movie-container {
@@ -140,7 +142,7 @@ body {
 }
 
 .infor img {
-/*     border-radius: 26px;
+  /*     border-radius: 26px;
     margin-left: auto;
     margin-right: auto;
     width: 450px;
@@ -183,7 +185,7 @@ body {
 }
 
 .RunVote {
-/*     display: flex;
+  /*     display: flex;
     flex-direction: row;
     justify-content: center;
     color: #FFF;
@@ -275,11 +277,6 @@ tr {
 }
 
 td {
-/*     font-size: 40px;
-    padding-bottom: 40px;
-    padding-right: 40px;
-    border-radius: 20px;
-    color: #fff; */
   font-size: 31px;
   padding-bottom: 40px;
   padding-right: 40px;
@@ -294,6 +291,7 @@ td {
   border: none;
   border-radius: 5px;
   color: #fff;
+  padding: 1.5rem;
 }
 
 #passwordInput {
@@ -303,6 +301,7 @@ td {
   border: none;
   border-radius: 5px;
   color: #fff;
+  padding: 1.5rem;
 }
 
 #reviewInput {
@@ -312,6 +311,7 @@ td {
   border: none;
   border-radius: 5px;
   color: #fff;
+  padding: 1.5rem;
 }
 
 #starRating {
@@ -320,6 +320,7 @@ td {
   backdrop-filter: blur(18.5px);
   border: none;
   border-radius: 5px;
+  padding: 1rem;
 }
 
 #starRating {
@@ -332,7 +333,7 @@ tbody {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 40px;
+  padding: 60px 40px 40px 40px;
   border-radius: 40px;
   border: 0.5px solid #656565;
 }
@@ -354,11 +355,10 @@ tbody {
 }
 
 #btn:hover {
-/*     background-color: #3A8CF5;
+  /*     background-color: #3A8CF5;
     color: #fff;
     border: none;
     box-shadow: none; */
-}
   background-color: #3a8cf5;
   color: #fff;
   border: none;
@@ -385,6 +385,11 @@ a:link {
   align-items: center;
 }
 
+#reviewsBox .reviewCnt {
+  color: #fff;
+  margin-bottom: 5rem;
+}
+
 #reviews {
   background: rgba(126, 126, 126, 0.15);
   backdrop-filter: blur(18.5px);
@@ -398,7 +403,7 @@ a:link {
   width: 50%;
 }
 
-#text {
+#reviewText {
   margin-bottom: 50px;
 }
 
@@ -406,14 +411,14 @@ p {
   font-size: 25px;
 }
 
-#name {
+#reviewText .reviewName {
   text-align: left;
 }
 
-#content {
+#reviewText .reviewContent {
   font-size: 35px;
 }
 
-#etc {
+#reviewText .reviewEtc {
   text-align: right;
 }

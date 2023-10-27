@@ -5,7 +5,7 @@ const homeBtn = document.querySelector("#header h1");
 
 // 이미지를 클릭하면 아이디를 가지고 상세페이지로 이동
 const imgClick = (id) => {
-  window.location.href = `second.html?movieId=${id}`;
+  window.location.href = `movieDetail.html?movieId=${id}`;
 };
 
 // API 가져오기
@@ -55,7 +55,6 @@ homeBtn.addEventListener("click", (e) => {
 // 버튼을 클릭하거나 엔터를 치면 검색 기능
 searchForm.addEventListener("submit", async (e) => {
   e.preventDefault();
-
   const inputVal = searchInput.value.toLowerCase();
   const queryUrl = `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${inputVal}&include_adult=false&language=ko-KR&page=1`;
 

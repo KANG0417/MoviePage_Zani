@@ -1,4 +1,4 @@
-import { movieData } from "./second.js";
+import { movieData } from "./movieDetail.js";
 
 const reviewForm = document.getElementById("reviewForm");
 const reviewInput = document.getElementById("reviewInput");
@@ -8,6 +8,7 @@ const nameInput = document.getElementById("nameInput");
 const nameResult = document.getElementById("nameResult");
 const passwordResult = document.getElementById("passwordResult");
 const starRating = document.getElementById("starRating");
+const reviewCnt = document.querySelector("#reviewsBox  .reviewCnt");
 
 // 리뷰마다 고유값 생성
 function uuidv4() {
@@ -46,20 +47,24 @@ const getReviewData = async () => {
   for (let i = 0; i < userArr.length; i++) {
     // 리뷰 생성
     let reviewHTML = `
-    <div id = "text">
-    <p id = "name">작성자 : ${userArr[i].userName} </p>
+    <div id = "reviewText">
+    <p class = "reviewName">작성자 : ${userArr[i].userName} </p>
     ${userArr[i].star === "1" ? "<p>⭐</p>" : ""}
     ${userArr[i].star === "2" ? "<p>⭐⭐</p>" : ""}     
     ${userArr[i].star === "3" ? "<p>⭐⭐⭐</p>" : ""}     
     ${userArr[i].star === "4" ? "<p>⭐⭐⭐⭐</p>" : ""}     
     ${userArr[i].star === "5" ? "<p>⭐⭐⭐⭐⭐</p>" : ""}     
-    <p id = "content">${userArr[i].content}</p>
-    <p id = "etc">${userArr[i].date} <button class="reviewDelbtn">삭제</button></p>    
+    <p class = "reviewContent">${userArr[i].content}</p>
+    <p class = "reviewEtc">${userArr[i].date}
     </div>
     `;
+    // <button class="reviewDelbtn" value="${userArr[i].uid}">삭제</button></p>
 
     reviews.innerHTML += reviewHTML;
   }
+
+  // 리뷰 데이터 갯수 조회
+  reviewCnt.innerHTML = `<span>${userArr.length}</span> 개의 리뷰가 달렸습니다`;
 };
 
 // 리뷰 데이터 조회하는 함수 실행
