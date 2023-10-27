@@ -1,3 +1,5 @@
+import fetchMovies from "./second.js";
+
 const reviewForm = document.getElementById("reviewForm");
 const reviewInput = document.getElementById("reviewInput");
 const reviews = document.getElementById("reviews");
