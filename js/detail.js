@@ -194,7 +194,3 @@ function filterWord() {
 
   return true;
 }
-
-// 삭제 시키기
-
-console.log(document.getElementById("#etc"));
