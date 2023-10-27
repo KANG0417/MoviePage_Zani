@@ -40,7 +40,7 @@ a {
 }
 
 #header h1 {
-/*     color: #fff;
+  /*     color: #fff;
     font-family: Pretendard;
     font-size: 48px;
     font-style: normal;
@@ -58,11 +58,11 @@ a {
 }
 
 a:visited {
-    color: white;
+  color: white;
 }
 
 a:link {
-    color: white;
+  color: white;
 }
 
 #bigTitle {
@@ -76,7 +76,7 @@ a:link {
 }
 
 .headerContents {
-/*     display: flex;
+  /*     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
@@ -142,7 +142,7 @@ body {
 }
 
 .infor img {
-/*     border-radius: 26px;
+  /*     border-radius: 26px;
     margin-left: auto;
     margin-right: auto;
     width: 450px;
@@ -185,7 +185,7 @@ body {
 }
 
 .RunVote {
-/*     display: flex;
+  /*     display: flex;
     flex-direction: row;
     justify-content: center;
     color: #FFF;
@@ -277,7 +277,7 @@ tr {
 }
 
 td {
-/*     font-size: 40px;
+  /*     font-size: 40px;
     padding-bottom: 40px;
     padding-right: 40px;
     border-radius: 20px;
@@ -356,11 +356,10 @@ tbody {
 }
 
 #btn:hover {
-/*     background-color: #3A8CF5;
+  /*     background-color: #3A8CF5;
     color: #fff;
     border: none;
     box-shadow: none; */
-}
   background-color: #3a8cf5;
   color: #fff;
   border: none;
