@@ -30,4 +30,7 @@ TMDB의 데이터베이스를 기반으로 인기있는 영화들을 확인하�
 ## 화면 구성
 |메인페이지|상세페이지|
 |:---:|:---:|
-|<img src ="https://github.com/KANG0417/moviePage-Zani/assets/127959356/be13e803-cf31-4a6c-ba51-ec687f7cab8f" width="400" />|<img src ="https://github.com/KANG0417/moviePage-Zani/assets/127959356/479809ab-b9e5-4615-b17e-f1ff87085d49" width="400" />|
+|<img src ="https://github.com/KANG0417/moviePage-Zani/assets/127959356/be13e803-cf31-4a6c-ba51-ec687f7cab8f" width="400" />|<img src ="https://github.com/KANG0417/moviePage-Zani/assets/127959356/479809ab-b9e5-4615-b17e-f1ff87085d49" width="400" />|  
+
+## 배포 주소
+https://kang0417.github.io/moviePage-Zani/
