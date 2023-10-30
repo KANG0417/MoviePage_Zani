@@ -10,10 +10,10 @@
 |팀원|맡은역할|깃허브|
 |:------:|:---:|:---:|
 |팀장: 여인준|레이아웃 디자인, 전체 css, 상세페이지|https://github.com/blackpa1nt|
-|팀원: 정효창|유효성검사, 상세페이지 css|https://github.com/HyoChang5147|
-|팀원: 천민규|상세페이지 css, 리뷰 등록|https://github.com/gyugod93|
+|팀원: 정효창|유효성검사, 상세페이지 css, TMDB API 연결|https://github.com/HyoChang5147|
+|팀원: 천민규|상세페이지 css, 리뷰 등록, TMDB API 연결|https://github.com/gyugod93|
 |팀원: 강지향|로컬스토리지 저장, 리뷰 목록 조회, 검색API|https://github.com/KANG0417|
-|팀원: 김범수|메인 css, 유지보수|https://github.com/STINGRAY001|
+|팀원: 김범수|메인 css, 유지보수, TMDB API 연결|https://github.com/STINGRAY001|
 
 ## 프로젝트 소개
 TMDB의 데이터베이스를 기반으로 인기있는 영화들을 확인하거나 검색을 할 수 있도록 순수 바닐라 자바스크립트로 구연 된 'ZANI MOVIE' 사이트입니다 </br>
