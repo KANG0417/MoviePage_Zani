@@ -17,11 +17,12 @@ const fetchMovies = () => {
       const { title, overview, runtime, vote_average, poster_path } = data;
 
       // 4. fetch를 해온 데이터를 document에 렌더링해준다
+      let noContent = "해당 영화는 줄거리를 제공하지 않습니다";
       const movieDetiles = `
             <div class='infor'>
                 <img src='https://image.tmdb.org/t/p/w500${poster_path}'>
                 <div class='movieTitle'>${title}</div>
-                <div class='movieOverview'>${overview}</div>
+                <div class='movieOverview'>${overview !== null ? overview : noContent}</div>
                 <div class='RunVote'>
                     <div class='movieVote'><p>평점</p>${Math.ceil(vote_average * 10) / 10}</div>
                     <div class='movieRuntime'><p>러닝타임</p>${runtime}</div>
